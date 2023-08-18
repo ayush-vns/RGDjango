@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: grey;">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8" style="margin-top: 10px; text-shadow:10px 10px 10px rgb(223, 217, 217) ;">
+                <center>
+                    <h1>Registration form</h1>
+                </center>
+            </div>
+
+            <div class="col-md-2"></div>
+
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form>
+                    <div class="text-center">
+                        <!-- {{user_name}} -->
+
+                        <div class="form-group">
+                            <label for="username" style="color: pink;">User Name:</label>
+                            <input type="text" class="form-control"
+                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(183, 182, 240) ;" name="username"
+                                value="{{Username}}" placeholder="User Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" style="color: pink;"> Name:</label>
+                            <input type="text" class="form-control"
+                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(15, 15, 15);" Name="Name"
+                                value="{{Name}}" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="color: pink;">password:</label>
+                            <input type="password" class="form-control"
+                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(216, 205, 243);" name="password"
+                                value="{{Password}}" placeholder="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Confirmpassword" style="color: pink;">confirmpassword:</label>
+                            <input type="password" class="form-control" value="{{confirmpassword}}"
+                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(173, 3, 3);" name="confirmpassword"
+                                placeholder="Confirm password" >
+                        </div>
+                        <input type="submit" class="btn btn-primary"
+                            style="margin-top:10px;box-shadow:10px 10px 10px rgb(15, 15, 15);" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <center>
+
+                    <h2>{{result}}</h2>
+                </center>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
