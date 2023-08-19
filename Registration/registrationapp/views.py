@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import regis
 
 
@@ -7,26 +7,26 @@ def index(request):
     return HttpResponse("Hello App")
 
 def regist(request):
-    username = ""
+    Username = ""
     name = ""
     password = ""
     result = ""
     confirmpassword= ""
 
     submit = ""
-    if request.GET:
-        username = request.GET["username"]
-        name = request.GET["Name"]
-        password = request.GET["password"]
-        confirmpassword = request.GET["confirmpassword"]
+    if request.POST:
+        Username = request.POST["Username"]
+        name = request.POST["Name"]
+        password = request.POST["password"]
+        confirmpassword = request.POST["confirmpassword"]
         if password != confirmpassword:
             result = "Passwords not matched"
             return render(request, "create.html",
-                          {"username": username, "name": name, "password": password, "confirmpassword": confirmpassword, "submit": submit,
+                          {"Username": Username, "name": name, "password": password, "confirmpassword": confirmpassword, "submit": submit,
                            "result": result})
         try:
               ms = regis()
-              ms.Username = username
+              ms.Username = Username
               ms.Name = name
               ms.Password = password
               ms.save()
@@ -37,22 +37,25 @@ def regist(request):
         print("saved data")
 
     return render(request, "create.html",
-                  {"username": username, "name": name, "password": password, "confirmpassword": confirmpassword, "submit": submit, "result":result})
+                  {"Username": Username, "name": name, "password": password, "confirmpassword": confirmpassword, "submit": submit, "result":result})
 
 
 def login(request):
     Username=""
-    password=""
-    if request.GET:
-        Username=request.GET["Username"]
-        password=request.GET["Password"]
-
-        data=regis.objects.filter(username=Username).filter(password=password)
+    Password=""
+    data=""
+    result=""
+    if request.POST:
+        Username=request.POST["Username"]
+        Password=request.POST["Password"]
+        data=regis.objects.filter(Username=Username).filter(Password=Password)
         # data=regis.objects.filter(password=password)
         if len(data)<=0:
-            data="error"
+            result="check your details"
+            return render(request,"login.html",{"result":result})
         else:
             data=data[0]
-            return render(request,"login.html",{"username":Username,"password":password,"data":data})
-
+            return render(request,"create.html")
+    # return render(request,'login.html',{"message":"ok"})
+    return render(request,"login.html",{"Username":Username,"Password":Password,"result":result})
 

@@ -5,6 +5,17 @@
     <title>dologin</title>
 </head>
 <body>
-    
+    <form method="post">
+        {{result}}
+        {%csrf_token%}
+        <center> <p>Login PAGE</p>
+        <h3>Username</h3>
+        <input type="text" name="Username" value="{{Username}}">
+        <h3>Password</h3>
+        
+        <input type="password" name="Password" value="{{password}}"><br>
+        <button type="submit">login</button>
+        <!-- <h2>{{data}}</h2> -->
+    </center>
 </body>
 </html>

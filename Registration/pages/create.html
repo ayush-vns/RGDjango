@@ -31,14 +31,16 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <form>
+                <form method="post">
+                    {%csrf_token%}
+
                     <div class="text-center">
                         <!-- {{user_name}} -->
 
                         <div class="form-group">
-                            <label for="username" style="color: pink;">User Name:</label>
+                            <label for="Username" style="color: pink;">User Name:</label>
                             <input type="text" class="form-control"
-                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(183, 182, 240) ;" name="username"
+                                style="margin-top:10px;box-shadow:10px 10px 10px rgb(183, 182, 240) ;" name="Username"
                                 value="{{Username}}" placeholder="User Name" required>
                         </div>
                         <div class="form-group">

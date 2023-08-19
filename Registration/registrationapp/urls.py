@@ -5,4 +5,5 @@ urlpatterns = [
 
     path("", views.index),
     path("regist",views.regist),
+    path("login",views.login)
 ]
