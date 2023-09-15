@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swapi</title>
+</head>
+<body>
+    <!-- <div class="container-fluid" style="border: ridge;color: black; width: 200px;"> -->
+    <center>
+<div class="container-fluid" style="border: ridge;color: black; width: 500px; height: 300px; background-color: darkgrey; color: white;">
+     <!-- {{result}} -->
+    <!-- <br> -->
+    <!-- <br> -->
+    <h2>
+        Title = {{result.title}}
+        <br>
+        <br>
+    
+    Director = {{result.director}}
+    <br>
+    <br>
+    Producer = {{result.producer}}
+    <br>
+    <br>
+    episode_id = {{result.episode_id}}  
+    <br>
+    <br>
+    release_date = {{result.release_date}}
+    <br>
+
+    people = {{result.characters.people}}
+
+</h2>
+    <!-- <br>
+    <br>
+    characters = {{result.characters}} -->
+</div>
+
+   
+    <form>
+        <h1 style="width: 200px;">FilmNo<input value="{{filmno}}" type="text" name="filmno"></h1>
+        <br>
+        <button type="submit">Submit</button>
+        <br>
+        <br>
+       <table border="1">
+        <tr><th>people</th></tr>
+        {% for p in people %}
+       <tr><td> <a target="_blank" href="/people?peopleno={{p}}">{{p}}</a></td></tr>
+        {%endfor%}
+       </table>
+        
+       
+
+
+    </form>
+    </center>
+</body>
+</html>

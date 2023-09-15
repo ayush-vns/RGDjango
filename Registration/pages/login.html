@@ -3,19 +3,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dologin</title>
+    {% load static %}
+    <link href="{% static 'styles.css'%}" rel="stylesheet">
+<style>
+   
+</style>
 </head>
 <body>
-    <form method="post">
-        {{result}}
-        {%csrf_token%}
-        <center> <p>Login PAGE</p>
-        <h3>Username</h3>
-        <input type="text" name="Username" value="{{Username}}">
-        <h3>Password</h3>
+    <div clas="container-fluid" style="padding-top: 40px;">
+   
+      <center> <div class="container" style="border: ridge; color: black; justify-content: center; width: 350px; height: 400px; background-color: lightgrey ; padding-top: 40px;">
         
-        <input type="password" name="Password" value="{{password}}"><br>
-        <button type="submit">login</button>
+    <form method="post">
+        <h2 style="color: black">{{result}}</h2>
+        {%csrf_token%}
+        <style background-color: pink;></style> <h2 style="color:black; background-repeat: no-repeat; font-style: oblique;">Login PAGE</h2>
+            <br>
+        <h3>Username</h3>
+        <input type="text" style="margin-top: 0px;"name="Username" value="{{username}}">
+        <h3>Password</h3>
+        <!-- <img src="{% static 'jpg2.jpg'%}" > -->
+        <input type="password" name="Password" value="{{password}}">
+        <br>
+        <button type="submit" style="margin-top: 20px;">login</button>
         <!-- <h2>{{data}}</h2> -->
     </center>
+</div>
+</div>
+    </form>
+</div>
 </body>
 </html>

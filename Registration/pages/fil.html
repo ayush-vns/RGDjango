@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                {% for film in result.results %}
+                 
+                    <li>
+                                Title: {{ film.title }}<br>
+                                Episode ID: {{ film.episode_id }}<br>
+                                Opening Crawl: {{ film.opening_crawl }}<br>
+                                Director: {{ film.director }}<br>
+                                Producer:{{ film.producer }}<br>
+                                Release Date: {{ film.release_date }}<br>
+                                Characters:
+                                <ul>
+                                    {% for character_url in film.characters %}
+                                        <li><a href="{{ character_url }}">{{ character_url }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                 {% endfor %}
+
+                
+        </div>
+    </div>
+</body>
+
+</html>
